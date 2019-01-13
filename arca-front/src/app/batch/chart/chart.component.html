@@ -1,0 +1,51 @@
+<div class="chart_div">
+    <div id="chartContainer" style="height: 370px; width: 100%; margin-left:auto;margin-right:auto;"></div>
+    <button class="btn btn-info" (click)="refreshChart()"> click to refresh chart</button>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Chosen year</span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)]="chosenYear">
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Granularity</span>
+        </div>
+        <select class="custom-select" [(ngModel)]="granularity">
+            <option value="1">Day</option>
+            <option value="2">Week</option>
+            <option value="3">Month</option>
+            <option value="4">Year</option>
+        </select>
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Start & End date</span>
+        </div>
+        <input type="date" class="form-control" placeholder="DD/MM/YYYY" [(ngModel)]="startDate">
+        <input type="date" class="form-control" placeholder="DD/MM/YYYY" [(ngModel)]="endDate">
+    </div>
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Second source</span>
+        </div>
+        <input type="text" class="form-control" [(ngModel)]="secondChartSource">
+    </div>
+</div>
+<div class="table_div">
+    <button class="btn btn-info" (click)="refreshTable()"> click to refresh Table</button>
+    <table class="table table-striped ">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Origin</th>
+                <th scope="col">Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let lVal of tableValues">
+                <th scope="row">{{lVal.Origin}}</th>
+                <td>{{lVal.Value}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

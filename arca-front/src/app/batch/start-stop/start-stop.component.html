@@ -1,0 +1,8 @@
+<div id="show_buttons">
+    <button type="button" class="btn btn-primary" (click)="startBatch()">Start the batch</button>
+    <button type="button" class="btn btn-primary" (click)="stopBatch()">Stop the batch</button>
+</div>
+<div id="progress_bar" *ngIf="this.isInitialized">
+    <progress-bar [progress]="this.currentPercent"></progress-bar>
+    <span><label>Lines: </label>{{this.displayedTextProgress}}</span>
+</div>
